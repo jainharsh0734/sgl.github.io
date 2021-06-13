@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>About us </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <style>
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+  </head>
+
+  <body>
+    <div class='header'>
+      <div class='inner_header'>
+        <div class='logo_container'>
+          <h1><span>SGL</span></h1>
+        </div>
+        <ul class='navigation'>
+          <a href='index.html'>
+            <li>HOME</li>
+          </a>
+          <a href='Doc.html'>
+            <li>DOCUMENT</li>
+          </a>
+          <a href='Down.html'>
+            <li>DOWNLOAD</li>
+          </a>
+          <a href='Aboutus.html'>
+            <li>ABOUT US</li>
+          </a>
+
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="content-section">
+          <div class="title">
+            <h1> About us</h1>
+          </div>
+          <div class="content">
+            <h3> Our Job is to Make The Programmers Life Easy </h3>
+            <p> C is a general purpose programming language. It is sometimes difficult to come by good C developers,
+              as the language is quite old and mostly serves specific niches.
+              C developers are often expected to develop code that specifically
+              integrates into the operating systems, operating system modules,
+              embedded systems, or low-level libraries for other high-level languages
+              such as Node.js, Python, and Go. By the help of these libraries organizations can develop
+              OS,DATABASES,COMPILER and interpreter for the technologies and also in fields of IOT and VIRTUAL
+              REALITY
+              our Developers develop the libraries so that the
+              others can create extra ordinary things.</p>
+
+            <div class="button">
+              <a href="ourTeam.html">OUR TEAM</a>
+            </div>
+          </div>
+        </div>
+        <div class="image-section">
+          <img src="images/aboutus.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services py-5 bg-light">
+      <div class="container py-5">
+        <h1 class="text-center pb-5">Services</h1>
+        <div class="row pb-3">
+          <div class="col-lg-4 mb-3">
+            <div class="card text-center py-3">
+              <div class="card-body">
+                <div class="circle">
+                  <span><i class="fas fa-desktop"></i></span>
+                </div>
+                <h4 class="fw-bold pb-2">Web Design</h4>
+                <p>Lorem ipsum ub ausnosmspltdummy text for onf the Lorem Pllksim ninthe Standard dummy tect ever.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="featurette-divider">
+    <footer class="bg-dark text-center text-white">
+      <div class="container text-center fs-3 pt-5  text-uppercase">
+        SGL
+      </div>
+
+      <div class="container p-4 pb-0">
+        <section class="mb-2">
+          <a href="index.html" class="text-decoration-none m-1 link-light text-uppercase">Home</a>
+          <a href="Doc.html" class="text-decoration-none m-1 link-light text-uppercase">Docs</a>
+          <a href="Down.html" class="text-decoration-none m-1 link-light text-uppercase">Download</a>
+          <a href="Aboutus.html" class="text-decoration-none m-1 link-light text-uppercase">About Us</a>
+        </section>
+      </div>
+
+
+
+      <div class="container p-4 pb-0">
+        <section class="mb-2">
+          <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i
+              class="bi bi-google"></i></a>
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i
+              class="bi bi-linkedin"></i></a>
+
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i
+              class="bi bi-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3 mt-5" style="background-color: rgba(0, 0, 0, 0.2);">
+        © Copyright ©2021 All rights reserved
+        <a class="text-white text-decoration-none fw-bold" href="index.html">SGL</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  </body>
+
+</html>

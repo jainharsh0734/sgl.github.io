@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <title>SGL - Make Coding Easy</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <style>
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container text-uppercase p-2 ">
+      <a class="navbar-brand" href="index.html">SGL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Doc.html">Document</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Down.html">Download</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Aboutus.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="text-center fw-bolder fs-1 mt-3 mb-2">
+    DOWNLOADS
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="fs-3 text-capitalize text-sm-start fw-bold mb-2">
+      Sorting
+    </div>
+    <p class="lh-sm font-monospace mb-3">
+      Sorting refers to ordering data in an increasing or decreasing fashion according to some linear relationship among
+      the data items.
+
+      Sorting can be done on names, numbers and records. Sorting reduces the For example, it is relatively easy to look
+      up the phone number of a friend from a telephone dictionary because the names in the phone book have been sorted
+      into alphabetical order.
+    </p>
+    <p class="mt-2  fw-bold text-capitalize">
+      Here We Make Some SGL Librarires in 'C' So it makes easy to Work on it. Click on <kbd>Download</kbd> Button Given
+      Below
+    </p>
+  </div>
+  <div class="container content-align-center mb-5">
+    <table class="table table-hover position-relative">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Libraray Name</th>
+          <th scope="col">Download </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">LinearSort</th>
+          <td><a class="btn btn-outline-secondary btn-sm"
+              href="https://drive.google.com/uc?export=download&id=1VmoiTlpP19IGk-fDCVmKdlZSppt0eo0T" role="button"
+              onclick="popup()">Download</a>
+            <script type="text/javascript">
+              function popup() {
+                swal({
+                  title: "Thank You!!!",
+                  text: "PLEASE CHECK README.TXT FILE",
+                  icon: "success",
+                  button: "OK",
+                });
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">SelectionSort</th>
+          <td><a class="btn btn-outline-secondary btn-sm"
+              href="https://drive.google.com/uc?export=download&id=14RjhsR4Bk26S66bE13y6QDhYx_J7xtbv" role="button"
+              onclick="popup()">Download</a>
+            <script type="text/javascript">
+              function popup() {
+                swal({
+                  title: "Thank You!!!",
+                  text: "PLEASE CHECK README.TXT FILE",
+                  icon: "success",
+                  button: "OK",
+                });
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">BubbleSort</th>
+          <td><a class="btn btn-outline-secondary btn-sm"
+              href="https://drive.google.com/uc?export=download&id=1-F4NjP579nncebx5TZiKYMmtiITwx3TQ" role="button"
+              onclick="popup()">Download</a>
+            <script type="text/javascript">
+              function popup() {
+                swal({
+                  title: "Thank You!!!",
+                  text: "PLEASE CHECK README.TXT FILE",
+                  icon: "success",
+                  button: "OK",
+                });
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">MergeSort</th>
+          <td><a class="btn btn-outline-secondary btn-sm"
+              href="https://drive.google.com/uc?export=download&id=1DJrSSIXryDQW5lDpentBQdEeGUrJDT4u" role="button"
+              onclick="popup()">Download</a>
+            <script type="text/javascript">
+              function popup() {
+                swal({
+                  title: "Thank You!!!",
+                  text: "PLEASE CHECK README.TXT FILE",
+                  icon: "success",
+                  button: "OK",
+                });
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">QuickSort</th>
+          <td><a class="btn btn-outline-secondary btn-sm"
+              href="https://drive.google.com/uc?export=download&id=1pVcz9wkxy10gKPbm__X3aT4pqrHQMNrb" role="button"
+              onclick="popup()">Download</a>
+            <script type="text/javascript">
+              function popup() {
+                swal({
+                  title: "Thank You!!!",
+                  text: "PLEASE CHECK README.TXT FILE",
+                  icon: "success",
+                  button: "OK",
+                });
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">HeapSort</th>
+          <td><a class="btn btn-outline-secondary btn-sm"
+              href="https://drive.google.com/uc?export=download&id=1yhkhprXlDnfu0mJiyaRLeZ78ttciZ_C1" role="button"
+              onclick="popup()">Download</a>
+            <script type="text/javascript">
+              function popup() {
+                swal({
+                  title: "Thank You!!!",
+                  text: "PLEASE CHECK README.TXT FILE",
+                  icon: "success",
+                  button: "OK",
+                });
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">GnumSort</th>
+          <td><a class="btn btn-outline-secondary btn-sm"
+              href="https://drive.google.com/uc?export=download&id=1c77JDzaoeXSaiOhFWLV3BrMj420tn4UV" role="button"
+              onclick="popup()">Download</a>
+            <script type="text/javascript">
+              function popup() {
+                swal({
+                  title: "Thank You!!!",
+                  text: "PLEASE CHECK README.TXT FILE",
+                  icon: "success",
+                  button: "OK",
+                });
+              }
+            </script>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container-fluid">
+    <div class="fs-3 text-capitalize text-sm-start fw-bold mb-2">
+      Searching
+    </div>
+    <div class="lh-sm font-monospace mb-3">
+      <p class="mb-1">
+        Searching is the process of finding a given value position in a list of values.It decides whether a search key
+        is
+        present in the data or not.It is the algorithmic process of finding a particular item in a collection of items.
+        It can be done on internal data structure or on external data structure.
+      </p>
+      <p class="mb-1">
+        Searching in C Language has to check for an element or retrieve an element from any data structure where the
+        data is stored. Based on the type of search operation, there are generally two algorithms defined in C:
+      </p>
+      <div class="fw-bold">
+        Linear Search or Sequential Search and Binary Search</span>
+      </div>
+      <p class="mt-2  fw-bold text-capitalize">
+        Here We Make Some SGL Librarires in 'C' for Searching it makes easy to Work on it. Click on
+        <kbd>Download</kbd> Button Given Below
+      </p>
+    </div>
+    <div class="container content-align-center mb-5">
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Libraray Name</th>
+            <th scope="col">Download </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">LinearSearch</th>
+            <td><a class="btn btn-outline-secondary btn-sm" href="https://drive.google.com/uc?export=download&id=1KgZG_AZc2k5P3Jl_b8iBwVVXeBjSqe7U" role="button" onclick="popup()">Download</a>
+              <script type="text/javascript">
+                function popup() {
+                  swal({
+                    title: "Thank You!!!",
+                    text: "PLEASE CHECK README.TXT FILE",
+                    icon: "success",
+                    button: "OK",
+                  });
+                }
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">BinarySearch</th>
+            <td><a class="btn btn-outline-secondary btn-sm" href="https://drive.google.com/uc?export=download&id=1IOymVoKzk15nWngwcBRFx1MSUimfv4P1" role="button" onclick="popup()">Download</a>
+              <script type="text/javascript">
+                function popup() {
+                  swal({
+                    title: "Thank You!!!",
+                    text: "PLEASE CHECK README.TXT FILE",
+                    icon: "success",
+                    button: "OK",
+                  });
+                }
+              </script>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid">
+    <div class="fs-3 text-capitalize text-sm-start fw-bold mb-2">
+      Data Structures
+    </div>
+    <div class="lh-sm font-monospace mb-3">
+      <p class=" mb-1">
+        A data structure is a particular way of organizing data in a computer so that it can be used effectively. The
+        data structure name indicates itself that organizing the data in memory. There are many ways of organizing the
+        data in the memory as we have already seen one of the data structures.</p>
+      <p class="mb-1">
+        The C Programming language has many data structures like an stack, queue, linked list, tree, etc.
+      </p>
+      <p class="mt-2  fw-bold text-capitalize">
+        Here We Make Some SGL Librarires in 'C' So it makes easy to Work on it. Click on <kbd>Download</kbd> Button
+        Given
+        Below</span>
+      </p>
+    </div>
+    <div class="container content-align-center mb-5">
+      <table class="table table-hover end-position-relative">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Libraray Name</th>
+            <th scope="col">Download </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Stack</th>
+            <td><a class="btn btn-outline-secondary btn-sm"
+                href="https://drive.google.com/uc?export=download&id=1zVu7gKKTHQbFSY_aOBXMtAdFaF6XqR3L" role="button"
+                onclick="popup()">Download</a>
+              <script type="text/javascript">
+                function popup() {
+                  swal({
+                    title: "Thank You!!!",
+                    text: "PLEASE CHECK README.TXT FILE",
+                    icon: "success",
+                    button: "OK",
+                  });
+                }
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Queue</th>
+            <td><a class="btn btn-outline-secondary btn-sm"
+                href="https://drive.google.com/uc?export=download&id=1Sf7c-6OQE5aBoqvk3sYADiTtHLtH_oH4" role="button"
+                onclick="popup()">Download</a>
+              <script type="text/javascript">
+                function popup() {
+                  swal({
+                    title: "Thank You!!!",
+                    text: "PLEASE CHECK README.TXT FILE",
+                    icon: "success",
+                    button: "OK",
+                  });
+                }
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">PriorityQueue</th>
+            <td><a class="btn btn-outline-secondary btn-sm"
+                href="https://drive.google.com/uc?export=download&id=1vQUKOnFJy2TiZbBsQxUGS-8_X585zGRu" role="button"
+                onclick="popup()">Download</a>
+              <script type="text/javascript">
+                function popup() {
+                  swal({
+                    title: "Thank You!!!",
+                    text: "PLEASE CHECK README.TXT FILE",
+                    icon: "success",
+                    button: "OK",
+                  });
+                }
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">SinglyLinkedList</th>
+            <td><a class="btn btn-outline-secondary btn-sm"
+                href="https://drive.google.com/uc?export=download&id=1HrjP_A460rPHQfmN4loinPde8js5eEHL" role="button"
+                onclick="popup()">Download</a>
+              <script type="text/javascript">
+                function popup() {
+                  swal({
+                    title: "Thank You!!!",
+                    text: "PLEASE CHECK README.TXT FILE",
+                    icon: "success",
+                    button: "OK",
+                  });
+                }
+              </script>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid">
+    <div class="fs-3 text-capitalize text-sm-start fw-bold mb-2">
+      Additional Libraries
+    </div>
+    <div class="lh-sm font-monospace mb-3">
+      <p class=" mb-1">
+        Here are Some Additional Libraries For Some additonal functionalities to store the data. This Libraries Give
+        same features as regular Data Structures.
+      </p>
+      <p class="mb-1">
+        These include List, Dictionary, Set, Tuple, and many more. For Store the data for difrent purpose this are
+        with some extra funtionalities.Basically this are not available in C language but Our make team make it
+        Possible
+      </p>
+      <p class="mt-2  fw-bold text-capitalize">
+        Here We Make Some SGL Librarires in 'C' So it makes easy to Work on it. Click on
+        <kbd>Download</kbd> Button Given Below
+      </p>
+    </div>
+    <div class="container content-align-center mb-5">
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Libraray Name</th>
+            <th scope="col">Download </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">List</th>
+            <td><a class="btn btn-outline-secondary btn-sm"
+                href="https://drive.google.com/uc?export=download&id=1YkEW6mhtz9Qj6eMGKOr9XAmWY7T4pvCB" role="button"
+                onclick="popup()">Download</a>
+              <script type="text/javascript">
+                function popup() {
+                  swal({
+                    title: "Thank You!!!",
+                    text: "PLEASE CHECK README.TXT FILE",
+                    icon: "success",
+                    button: "OK",
+                  });
+                }
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Dictionary</th>
+            <td><a class="btn btn-outline-secondary btn-sm"
+                href="https://drive.google.com/uc?export=download&id=1ptv8uL5NOTvxeD6qCSe6wvBklJr0PL4-" role="button"
+                onclick="popup()">Download</a>
+              <script type="text/javascript">
+                function popup() {
+                  swal({
+                    title: "Thank You!!!",
+                    text: "PLEASE CHECK README.TXT FILE",
+                    icon: "success",
+                    button: "OK",
+                  });
+                }
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">CString</th>
+            <td><a class="btn btn-outline-secondary btn-sm"
+                href="https://drive.google.com/uc?export=download&id=1TsmebkU72rgI1BWYGbdcyescEJc59H1w" role="button"
+                onclick="popup()">Download</a>
+              <script type="text/javascript">
+                function popup() {
+                  swal({
+                    title: "Thank You!!!",
+                    text: "PLEASE CHECK README.TXT FILE",
+                    icon: "success",
+                    button: "OK",
+                  });
+                }
+              </script>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <div class="container mt-5 text-center">
+    <p class="fs-3 p-3 mb-2 bg-dark text-white">
+      IF YOU WANT WHOLE SGL IN SINGLE CLICK THEN GO WITH THIS DOWNLOAD BUTTON TO MAKE YOUR PROGRAM AT IT'S MAX
+      PERFORMANCE.
+    </p>
+    <div class="shadow p-3 mb-2 bg-body rounded">
+      <a class="btn btn-outline-secondary btn-lg"
+        href="https://drive.google.com/uc?export=download&id=1srae0uKV8EYfhczPSkR-8ctZechwdFKM" role="button"
+        onclick="popup()">DOWNLOAD</a>
+      <script type="text/javascript">
+        function popup() {
+          swal({
+            title: "Thank You!!!",
+            text: "PLEASE CHECK README.TXT FILE",
+            icon: "success",
+            button: "OK",
+          });
+        }
+      </script>
+    </div>
+  </div>
+
+
+  <hr class="featurette-divider">
+  <footer class="bg-dark text-center text-white">
+    <div class="container text-center fs-3 pt-5  text-uppercase">
+      SGL
+    </div>
+
+    <div class="container p-4 pb-0">
+      <section class="mb-2">
+        <a href="index.html" class="text-decoration-none m-1 link-light text-uppercase">Home</a>
+        <a href="Doc.html" class="text-decoration-none m-1 link-light text-uppercase">Docs</a>
+        <a href="Down.html" class="text-decoration-none m-1 link-light text-uppercase">Download</a>
+        <a href="Aboutus.html" class="text-decoration-none m-1 link-light text-uppercase">About Us</a>
+      </section>
+    </div>
+
+
+
+    <div class="container p-4 pb-0">
+      <section class="mb-2">
+        <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i
+            class="bi bi-google"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i
+            class="bi bi-linkedin"></i></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i
+            class="bi bi-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3 mt-5" style="background-color: rgba(0, 0, 0, 0.2);">
+      © Copyright ©2021 All rights reserved
+      <a class="text-white text-decoration-none fw-bold" href="index.html">SGL</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+</body>
+
+</html>

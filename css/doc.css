@@ -1,0 +1,107 @@
+.background
+{
+    background: rgba(0, 0, 0, 0.7) url(../images/img2.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.boxmain
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: cadetblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin: auto;
+    max-width: 50%;
+    padding-block: 20px;
+}
+.background2
+{
+    background: rgba(0,0,0,0.7) url(../images/img4.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.boxmain3
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: cadetblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-style:times;
+    margin: auto;
+    max-width:100%;
+    padding-block:15px;
+}
+.background3
+{
+    background: rgba(0,0,0,0.7) url(../images/img5.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.boxmain2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: cadetblue;
+    font-family: 'Times New Roman', Times,sans;
+    font-style: italic;
+    margin: auto;
+    max-width: 50%;
+}
+.firstsection
+{
+    height: 60vh;
+}
+.secondsection
+{
+    height:80vh;
+}
+
+.fhalf
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.shalf
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.alpha { color: $purple; }
+.beta {
+  color: $yellow-300;
+  background-color: $indigo-900;
+}
+
+.smalltext
+{
+    font-size: 5ex;
+    text-align: center;
+    padding-bottom:5px;
+}
+
+.largetext
+{
+    font-size: 20ex;
+}
+
+.line
+{
+    width: 30%;
+    align-self: center;
+}
+
+p
+{
+    margin-top:2px;
+    margin-bottom: 0rem;
+}
+.panel-footer.panel-custom {
+    background: red;
+    color: white;
+}

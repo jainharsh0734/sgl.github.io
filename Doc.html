@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <title>SGL - Make Coding Easy</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <style>
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container text-uppercase p-2 ">
+      <a class="navbar-brand" href="index.html">SGL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Doc.html">Document</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Down.html">Download</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Aboutus.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="text-center fw-bolder fs-1 mt-3 mb-2">
+    DOCUMENTATION
+  </div>
+
+  <h1>Abstract</h1>
+  <p>
+    SGL is a C library freely inspired by the Standard Template Library (STL). In opposition to C++, the C language
+    lacks any support for generic programming. Our library results from the idea to create a generic library of reusable
+    algorithms through the C preprocessor.<br>
+    <br>
+  </p>
+  <p>Sglib is a library defining useful macros for manipulating common data structures. The library currently provides
+    generic implementation for:<br>
+  <ol type="disc">
+
+    <li><b>Sorting algo </b></li>
+    <li><b> Searching algo </b></li>
+    <li><b>Core Data Structure </b></li>
+    <li><b>Unconventional Data Structure </b> </li>
+    
+
+</ol>
+  </p>
+  <h1>Basics About SGL</h1>
+  <p>
+    A basic set of functions (macros) is provided for each data structure. They cover insertion, deletion, search and
+    iterator traversal of elements. Moreover, additional (specific) functions are provided for each data structure, such
+    as, concatenation, reverse or sort for lists.
+    Sglib provides algorithms, not data structures. Algorithms implemented in Sglib operate on user's types, for
+    example, list macros are operational for any data structure containing<br>
+    <br>
+    <br>
+  </p>
+  <h2>About SGL</h2>
+  <p>
+    SGL stands for Simple Generic Library and it consists of single header file written in C programming language. The
+    header file sglib.h provides generic implementation of most common algorithms for arrays, lists, sorted lists and
+    red-black trees. Implementation of double linked lists and hashed tables is envisaged. Also suggestions for new
+    useful functionalities are welcomed. The library is generic and it does not define its own data structures. Rather
+    it acts on existing user defined data structures via a generic interface. It also does not allocate or deallocate
+    any memory and does not depend on any particular memory management. In case od several datatypes, sglib even does
+    not impose its own data representation. For example, sglib list routines can be applied to any user defined
+    structure containing a pointer to the same structure as its field.
+    All algorithms are implemented in form of macros parametrized by the type of data structure and comparator function
+    (or comparator macro). Several further generic parameters such as the name of 'next' field for linked lists may be
+    required for some algorithms and data structures.<br>
+    During the design and implementation of sglib we have followed following rules:<br>
+
+    Efficiency. Resulting code must be as efficient as if it was specialized code<br>
+    Simplicity. No special tool is needed for generic constructions.<br>
+    In order to avoid conflicts with user symbols, each defined macro and function starts by 'SGLIB_' and 'sglib_'
+    prefix respectively.<br>
+    In order to avoid situation when actual macro parameter conflicts with symbol defined within macro, all names
+    defined within macros start and finish with underscore character.<br>
+    Each occurence of macro parameter giving an expression is always used enclosed into supplementary parentheses.<br>
+  </p>
+  <br>
+  <br>
+  <h3>Concepts:</h3>
+  <br>
+  <h4>Comparator Function</h4>
+  <p>
+    A comparator is a function taking two elements and returning an integer value, the value is respectively a negative
+    number, zero or a positive number for cases when the first parameter is less than, equal, or greater than the
+    second,is a comparator for integers numbers. By the way, the myComparator with this definition is predefined in
+    sglib and you can use it withount need of your own redefinitions.
+    <center>
+      <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+        <tr>
+          <td>
+            <pre>
+int myComparator(void *left,void *right)
+{
+ int *i,*j;
+ i=(int *)left;
+ j=(int *)right;
+ return (*i)-(*j);
+}
+</pre>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </p>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <a name="Generic Stack"></a>
+
+  <br><br>
+
+
+  <h3>Linear Sort</h3>
+  <p> <em>Bubble Sort</em> Sorting elements or number using Linear sort technique </p>
+  <p>*x pointer which contain base address of the array<br>
+    p2f pointer to function called my comparator function which compare two arrays and return boolean value<br>
+    es called element size
+    lower bound and upper bound of *x</p>
+  </p>
+  <p>
+    <center>
+      <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+        <tr>
+          <td>
+            <pre>
+void linearSort(void *x,int cs,int es,int (*ptr)(void *,void *));
+</pre>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </p>
+  <br><br>
+
+
+  <h3>Bubble Sort</h3>
+  <p> <em>Bubble Sort</em> Sorting elements or number using Bubble sort technique </p>
+  <p>*x pointer which contain base address of the array<br>
+    p2f pointer to function called my comparator function which compare two arrays and return boolean value<br>
+    es called element size
+    lower bound and upper bound of *x;
+    *successful and *error are the factor of success or error which return bollean value or 0 or 1</p>
+  </p>
+  <center>
+    <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+      <tr>
+        <td>
+          <pre>
+
+#include&ltBubbleSort.h&gt
+// if user wants to sort char/double/float or any type of data
+// then instead of this int it should of that type
+
+int myComparator(void* left,void* right)
+{
+int *i,*j;
+i=(int*)left;
+j=(int*)right;
+return (*i)-(*j);
+}
+
+int main()
+{
+int req,y;
+printf("Enter the requirement");
+scanf("%d",&req);
+int x[req];
+y=0;
+while(y <> < req)
+{
+printf("Enter the data");
+scanf("%d",&x[y]);
+y++;
+}
+BubbleSort(x,req,sizeof(int),myComparator);
+y=0;
+while(y<> < req)
+{
+printf("%d\n",x[y]);
+y++;
+}
+return 0;
+}
+
+</pre>
+        </td>
+      </tr>
+    </table>
+  </center>
+  </p>
+  <br><br>
+
+  <br><br>
+
+  <h3>Quick Sort</h3>
+  <a name="Quick Sort"></a>
+  <p> <em>Quick Sort</em> Sorting elements or number using merge sort technique </p>
+  <p>*x pointer which contain base address of the array<br>
+    p2f pointer to function called my comparator function which compare two arrays and return boolean value<br>
+    es called element size
+    lower bound and upper bound of *x;
+    *successful and *error are the factor of success or error which return bollean value or 0 or 1</p>
+  </p>
+  <center>
+    <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+      <tr>
+        <td>
+          <pre>
+#include&ltstdio.h&gt
+#include&ltQuickSort.h&gt
+// if user wants to sort char/double/float or any type of data
+// then instead of this int it should of that type
+int mycomparator(void*left,void*right)
+{
+int *i,*j;     // if user wants to sort char/double/float or any type of data
+i=(int*)left;  // then instead of this int it should of that type
+j=(int*)right;
+return (*i)-(*j);
+}
+int main()
+{
+int y,lb,ub,req;
+printf("Enter the req : ");
+scanf("%d",&req);
+fflush(stdin);
+int x[req];
+y=0;
+while(y<req)
+{
+printf("Enter the data : \n");
+scanf("%d",&x[y]);
+fflush(stdin);
+y++;
+}
+lb=0;
+ub=req-1;
+quicksort(x,lb,ub,sizeof(int),mycomparator);
+----------*************************---------
+x is the base address of array
+lb and ub are the lower bound
+size of one element
+last args is pointer to function
+----------*************************---------
+y=0;
+while(y <>< req)
+{
+printf("%d\n",x[y]);
+y++;
+}
+return 0;
+}
+</pre>
+        </td>
+      </tr>
+    </table>
+  </center>
+  <br><br>
+
+  <h3>Merge</h3>
+
+  <p> <em>Merge</em> Merging two arrays </p>
+  <p>*x pointer which contain base address of the array<br>
+    p2f pointer to function called my comparator function which compare two arrays and return boolean value<br>
+    es called element size
+    lb1,ub1 are the lower bound and upper bound of the first array of arr1[]
+    lb2,ub2 are the lower bound and upper bound of the second array of arr[2]
+    *successful and *error are the factor of success or error which return bollean value or 0 or 1</p>
+
+  <center>
+    <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+      <tr>
+        <td>
+          <pre>
+
+void merge(void *x,int (*p2f)(void *,void *),int es,int lb1,int ub1,int lb2,int ub2,int *successful,int *error)
+</pre>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+  <br><br>
+
+
+  <a name="Merge Sort"></a>
+  <h3>Merge Sort</h3>
+  <p> <em>Merge Sort</em> Sorting elements or number using merge sort technique </p>
+  <p>*x pointer which contain base address of the array<br>
+    p2f pointer to function called my comparator function which compare two arrays and return boolean value<br>
+    es called element size
+    lower bound and upper bound of *x;
+    *successful and *error are the factor of success or error which return bollean value or 0 or 1</p>
+  </p>
+  <center>
+    <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+      <tr>
+        <td>
+          <pre>
+void mergeSort(void *x,int (*p2f)(void *,void *),int es,int lowerBound,int upperBound,int *successful,int *error)
+</pre>
+        </td>
+      </tr>
+    </table>
+  </center>
+  <br><br>
+
+  <h4>Heap Sort</h4>
+  <p> <em>Heap Sort</em> Sorting elements or number using Heap sort technique </p>
+  <p>
+    <center>
+      <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+        <tr>
+          <td>
+            <pre>
+int main()
+{
+ int *x; 
+ int y,req;
+ printf("Enter Requirements:");
+ scanf("%d",&req);
+ if(req<=0)
+ {
+ printf("Invalid Requirement\n");
+ return 0;
+ }
+ x=(int *)malloc(sizeof(int)*req);
+ if(x==NULL)
+ {
+ printf("Invalid Requirement\n");
+ return 0;
+ }
+ for(y=0;y<> < req;y++)
+ {
+ printf("Enter a number:");
+ scanf("%d",&x[y]);
+ }
+ heapSort((void *)x,0,req);
+ for(y=0;y<> < req;y++) 
+ {
+ printf("%d\n",x[y]);
+ }
+ free(x);
+ return 0;
+}
+</pre>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </p>
+  <br><br>
+
+  <h3>Selection Sort</h3>
+  <p>
+    Selection sort is a simple sorting algorithm. This sorting algorithm is an in-place comparison-based algorithm in
+    which the list is divided into two parts, the sorted part at the left end and the unsorted part at the right end.
+    Initially, the sorted part is empty and the unsorted part is the entire list.
+    <center>
+      <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+        <tr>
+          <td>
+            <pre>
+              #ifndef __$__Selection_Sort_c
+              #define __$__Selection_Sort_c 440
+              #include<stdlib.h>
+              #include<string.h>
+              #include<SelectionSort.h>
+              void selectionsort(void *ptr,int cs,int es,int (*p2f)(void *,void *))
+              {
+              int w,si,e,f,g,oep,iep;
+              void *a,*b,*c;
+              c=(void *)malloc(es);
+              oep=cs-2;
+              iep=cs-1;
+              e=0;
+              while(e<=oep)
+              {
+              si=e;
+              f=e+1;
+              while(f<=iep)
+              {
+              a=ptr+(f*es);
+              b=ptr+(si*es);
+              w=p2f(a,b);
+              if(w<0)
+              {
+              si=f;
+              }
+              f++;
+              }
+              a=ptr+(e*es);
+              b=ptr+(si*es);
+              memcpy(c,(const void *)a,es);
+              memcpy(a,(const void *)b,es);
+              memcpy(b,(const void *)c,es);
+              e++;
+              }
+              free(c);
+              }
+            #endif
+            </pre>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </p>
+  <br><br>
+
+
+
+  <h3>Gnome Sort</h3>
+  <p>
+    The gnome sort is a sorting algorithm which is similar to insertion sort in that it works with one item at a time
+    but gets the item to the proper place by a series of swaps, similar to a bubble sort. It is conceptually simple,
+    requiring no nested loops. The average running time is O(n2) but tends towards O(n) if the list is initially
+    almost
+    sorted.
+    <center>
+      <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+        <tr>
+          <td>
+            <pre>
+              #ifndef __$__Gnome_Sort_c
+              #define __$__Gnome_Sort_c 442
+              #include<stdlib.h>
+              #include<string.h>
+              #include<GnomeSort.h>
+              void gnomeSort(void *ptr,int cs,int es,int (*p2f)(void *,void *))
+              {
+              int e,y,lep,w;
+              void *a,*b,*c;
+              c=(void *)malloc(es);
+              y=1;
+              lep=cs-1;
+              while(y<=lep)
+              {
+              e=y;
+              
+              a=ptr+(e*es);
+              b=ptr+((e-1)*es);
+              w=p2f(a,b);
+              while(e!=0 && w<0)
+              {
+              a=ptr+(e*es);
+              b=ptr+((e-1)*es);
+              w=p2f(a,b);
+              memcpy(c,(const void *)a,es);
+              memcpy(a,(const void *)b,es);
+              memcpy(b,(const void *)c,es);
+              e--;
+              }
+              y++;
+              }
+              free(c);
+              }
+              #endif
+            </pre>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </p>
+  <br><br>
+
+  <h3>Linear Search</h3>
+  <p>
+    a linear search or sequential search is a method for finding an element within a list. It sequentially checks each
+    element of the list until a match is found or the whole list has been searched.
+    <center>
+      <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+        <tr>
+          <td>
+            <pre>
+int binsearch(void *elt, size_t size, void *arr, size_t length, int (*compare)(void *, void *))
+{
+    size_t i = length / 2;
+    char *array = arr;
+
+    while (i < length)
+    {
+        int comparison = compare(array + i * size, elt);
+
+        if (comparison == 0)
+        {
+            return i;
+        }
+        else
+        {
+          i +=1;
+        }
+      
+    }
+}
+</pre>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </p>
+  <br><br>
+
+  <h3>Binary Search</h3>
+  <p>
+    Binary search is a fast search algorithm with run-time complexity of Ο(log n). This search algorithm works on the
+    principle of divide and conquer. For this algorithm to work properly, the data collection should be in the sorted
+    form.
+    <center>
+      <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+        <tr>
+          <td>
+            <pre>
+
+int binsearch(void *elt, size_t size, void *arr, size_t length, int (*compare)(void *, void *))
+{
+    size_t i = length / 2;
+    char *array = arr;
+
+    while (i < length)
+    {
+        int comparison = compare(array + i * size, elt);
+
+        if (comparison == 0)
+        {
+            return i;
+        }
+
+        if (comparison < 0)
+        {
+            i += (length - i + 1) / 2;
+        }
+        else
+        {
+            length = i;
+            i /= 2;
+        }
+    }
+
+    return -1;
+}
+</pre>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </p>
+  <br><br>
+
+  <h3>Stack</h3>
+  <p> <em>Stack</em> is any structure contatining two pointers data and next also its containing top pointer
+    which point
+    top most
+    variable also its has two variable elements size and size.</p>
+
+
+  <center>
+    <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+      <tr>
+        <td>
+          <pre>
+
+          typedef struct __stack_node
+          {
+          void *data;
+          struct __stack_node *next;
+          }StackNode;
+          typedef struct __stack
+          {
+          StackNode *top;
+          int elementSize;
+          int size;
+          }Stack;
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+  <h3>Queue</h3>
+  <p>
+  <p> <em>Queue</em> is any structure contatining two pointers data and next also its containing start amd end
+    pointer
+    which point top most
+    variable and end point also its has two variable elements size and memSize.</p>
+  <center>
+    <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+      <tr>
+        <td>
+          <pre>
+
+                typedef struct __queue_Node
+                { 
+                void *data; 
+                struct __queue_Node *next;
+                }QueueNode;
+                typedef struct __queue
+                {
+                QueueNode *start;
+                QueueNode *end;
+                int size;
+                size_t memSize;
+                }Queue;
+                void initQueue(Queue *queue,size_t memSize);
+                int isQueueEmpty(Queue *queue);
+                int addToQueue(Queue *queue,const void *num);
+                void removeFromQueue(Queue *queue,void *data);
+                void clearQueue(Queue *queue);
+
+                </pre>
+        </td>
+      </tr>
+    </table>
+  </center>
+  </p>
+  <br><br>
+  <h3>Priority Queue</h3>
+  <p>
+    Priority Queue is more specialized data structure than Queue. Like ordinary queue, priority queue has same method
+    but with a major difference. In Priority queue items are ordered by key value so that item with the lowest value of
+    key is at front and item with the highest value of key is at rear or vice versa. So we're assigned priority to item
+    based on its key value. Lower the value, higher the priority. Following are the principal methods of a Priority
+    Queue.
+    <center>
+      <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+        <tr>
+          <td>
+            <pre>
+#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+
+#include &ltpqueue.h&gt
+
+int cmp_ints(const void *int1, const void *int2) {
+    return *(int*) int1 - *(int*) int2;
+}
+
+int main(int argc, char** argv) {
+    
+    PQueue* pq = pqueue_new(cmp_ints, 200);
+    
+    int x = 100, y = 50, z = 300, k = 100, w = 1000;
+    
+    pqueue_enqueue(pq, &x);
+    pqueue_enqueue(pq, &y);
+    pqueue_enqueue(pq, &z);
+    pqueue_enqueue(pq, &k);
+    pqueue_enqueue(pq, &w);
+    
+    int i = 0;
+    for(;i<5;++i)
+        printf("%d\n", *(int*) pqueue_dequeue(pq));
+    
+    pqueue_delete(pq);
+    
+    return (EXIT_SUCCESS);
+}
+</pre>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </p>
+  <br><br>
+
+  <h3>Singly Linked List</h3>
+
+  <p> <em>Singly Linked List</em>A linked list is any C structure containing a pointer to the next
+    element. The structure is entirely defined by the user,
+    sglib does not provide any default implementation.</p>
+
+
+  <center>
+    <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+      <tr>
+        <td>
+          <pre>
+#ifndef __$__linked_List_h
+#define __$__linked_List_h 228
+struct __$__SinglyLinkedListNode
+{
+void *ptr;
+struct __$__SinglyLinkedListNode *next;
+};
+typedef struct __$__SinglyLinkedList
+{
+struct __$__SinglyLinkedListNode *start,*end;
+int totalSize;
+int elementSize;
+}SinglyLinkedList;
+
+SinglyLinkedList *createSinglyLinkedList(int elementSize)
+void addToSinglyLinkedList(SinglyLinkedList *sll,void *ptr,int *errorCode)
+void getAll(SinglyLinkedList *sll)
+int getSizeOfSinglyLinkedList(SinglyLinkedList *sll)
+void *getElementFromSinglyLinkedList(SinglyLinkedList *sll,int index,int *errorCode)
+void updateSinglyLinkedList(SinglyLinkedList *sll,int index,void *ptr,int *errorCode)
+void *deleteFromSinglyLinkedList(SinglyLinkedList *sll,int index,int *errorCode)
+void clearSinglyLinkedList(SinglyLinkedList *sll,int *errorCode)
+void releaseSinglyLinkedList(SinglyLinkedList *sll,int *errorCode)
+#endif
+
+
+</pre>
+        </td>
+      </tr>
+    </table>
+  </center>
+  <br>
+  <br>
+
+  <h3>List</h3>
+  <p>
+
+    <center>
+      <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+        <tr>
+          <td>
+            <pre>
+1)void initList(List* list);
+2)void iput(List *list,int data);
+3)void cput(List *list,char data);
+4)void fput(List *list,float data);
+5)void iremove(List *list,int data);
+6)void cremove(List *list,char data);
+7)void fremove(List *list,float data);
+8)void iget(List *list);
+9)void cget(List *list);
+10)void fget(List *list);
+11)int getSize(List *list);
+12)int igetValueAtIndex(List *list,int index);
+13)char cgetValueAtIndex(List *list,int index);
+14)float fgetValueAtIndex(List *list,int index);
+15)int isize(List *list);
+16)int csize(List *list);
+17)int fsize(List *list);
+18)void getAll(List *list); 
+
+int main()
+{
+List l;
+initList(&l); // initialize the list
+iput(&l,10);  //for adding an element 
+//user has to pass address of list and
+// data value for integer function should be iput             
+iput(&l,20);
+iput(&l,30);
+iput(&l,40);
+iget(&l); 
+
+iremove(&l,10);
+
+printf("%d",isize(&l));
+
+
+List l;
+initList(&l);
+cput(&l,'A');
+cput(&l,'B');
+cput(&l,'C');
+cput(&l,'D');
+
+cget(&l); 
+cremove(&l,'A');
+printf("%d\n",getSize(&l)); 
+printf("%d",csize(&l));
+printf("%c",cgetValueAtIndex(&l,2)); 
+
+//float test case
+List l;
+initList(&l);
+fput(&l,10.25);
+fput(&l,20.265);
+fput(&l,30.587);
+fput(&l,40.254);
+fremove(&l,10.25);
+fget(&l); //get all the data of float type
+printf("%d",fsize(&l));
+printf("%d\n",getSize(&l)); 
+
+printf("%f",fgetValueAtIndex(&l,2));
+
+getAll(&l);
+
+return 0;
+}
+</pre>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </p>
+  <br><br>
+
+  <h3>C String</h3>
+  <p>*s pointer which contain base address of the array<br>
+  </p>
+  </p>
+  <center>
+    <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+      <tr>
+        <td>
+          <pre>
+
+1) getLength(address of struct);
+2) getValueAtIndex(address of struct,index);
+3) strItr(address of struct);
+4) equals(address of struct1,address of struct2); for comparing two strings  
+5) equalsIgnoreCase(address of struct1,address of struct2); //incasesensitive comparision 
+6) toUpper(address of struct);
+7) toLower(address of struct);
+#include&ltCString.h&gt
+int main()
+{
+string g;
+g.str="yash";
+int x=getLength(&g);
+char var=getValueAtIndex(&g,2);
+string q,w;
+q.str="YASH";
+strItr(&q);   // for iterating
+concatnate(&g,&q); 
+x=equals(&g,&q); 
+printf("%d",x);
+
+toUpper(&g);
+toLower(&g);
+
+return 0;
+}
+
+
+
+</pre>
+        </td>
+      </tr>
+    </table>
+  </center>
+  </p>
+  <br><br>
+
+  <h3>Dictionary</h3>
+
+  <p> <em>Dictionary</em> is any structure contatining two pointers data and next also its containing top pointer which
+    point top most
+    variable also its has two variable elements size and size.</p>
+
+
+  <center>
+    <table width=90% border=1 CELLPADDING="10" CELLSPACING="1">
+      <tr>
+        <td>
+          <pre>
+typedef struct __$__DictionaryNode
+{
+void *data,*key;
+struct __$__DictionaryNode *next;
+}DictionaryNode;
+
+typedef struct __$__Dictionary
+{
+int elementSize,keySize;
+DictionaryNode *start,*end;
+int totalSize;
+}Dictionary;
+
+Dictionary *createDictionary(int elementSize,int keySize)
+int sizeOfDictionary(Dictionary *dict)
+void addOnDictionary(Dictionary *dict,void *key,void *data,int *errorCode,int (*p2f)(void *,void *))
+void *deleteFromDictionary(Dictionary *dict,void *key,int *errorCode,int (*p2f)(void *,void *))
+void updateFromDictionary(Dictionary *dict,void *key,void *data,int *errorCode,int (*p2f)(void *,void *))
+void *getDataFromDictionary(Dictionary *dict,void *key,int *errorCode,int (*p2f)(void *,void *))
+void clearDictionary(Dictionary *dict,int *errorCode)
+void releaseDictionary(Dictionary *dict,int *errorCode)
+
+</pre>
+        </td>
+      </tr>
+    </table>
+  </center>
+  <br><br>
+
+
+
+
+  <hr class="featurette-divider">
+  <footer class="bg-dark text-center text-white">
+    <div class="container text-center fs-3 pt-5  text-uppercase">
+      SGL
+    </div>
+
+    <div class="container p-4 pb-0">
+      <section class="mb-2">
+        <a href="index.html" class="text-decoration-none m-1 link-light text-uppercase">Home</a>
+        <a href="Doc.html" class="text-decoration-none m-1 link-light text-uppercase">Docs</a>
+        <a href="Down.html" class="text-decoration-none m-1 link-light text-uppercase">Download</a>
+        <a href="Aboutus.html" class="text-decoration-none m-1 link-light text-uppercase">About Us</a>
+      </section>
+    </div>
+
+
+
+    <div class="container p-4 pb-0">
+      <section class="mb-2">
+        <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i
+            class="bi bi-google"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i
+            class="bi bi-linkedin"></i></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1 rounded-circle" href="#!" role="button"><i
+            class="bi bi-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3 mt-5" style="background-color: rgba(0, 0, 0, 0.2);">
+      © Copyright ©2021 All rights reserved
+      <a class="text-white text-decoration-none fw-bold" href="index.html">SGL</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
